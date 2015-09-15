@@ -13,7 +13,13 @@ var mainControllerFunc = function($scope) {
 	$scope.addAppointment = function(index) {
 		$scope.addedApt = prompt('Add your appointment name here')
 		$scope.days[index].appointments.push($scope.addedApt)
-	}	
+	}
+	$scope.toShow = function(index, day) {
+		day.appointments.splice(index, 1)
+		console.log('hi')
+	}
+	
+
 }
 
 angular.module('myApp').controller('mainController', ['$scope', mainControllerFunc])

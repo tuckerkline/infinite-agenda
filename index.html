@@ -12,7 +12,9 @@
     
     <div class = "calander" ng-repeat='day in days'>
     <h3> {{ day | date }} </h3>
-    <p class = 'appts'  ng-repeat = "appt in day.appointments track by $index"> {{$index + 1}}. {{ appt }}</p>
+    <ul>
+    <li class = 'appts' ng-repeat = "appt in day.appointments track by $index" >{{$index + 1}}. {{ appt }} <button class = "delete" ng-click = "toShow($index, day)">delete</button></li>
+    </ul>
     <button class = 'btn-default' ng-click = "addAppointment($index)">Add Appointment</button>
     </div>
 
