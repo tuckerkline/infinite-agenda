@@ -11,17 +11,10 @@
 	<h2>Calander</h2>
     
     <div class = "calander" ng-repeat='day in days'>
-    <h3> {{ day }} </h3>
-    <p class = 'appts' ng-repeat = 'appt in day.appointments'> {{$index + 1}}. {{ appt }} </p>
-    <button class = 'primary-btn' ng-click = "addAppointment($index)">Add Apointment</button>
+    <h3> {{ day | date }} </h3>
+    <p class = 'appts'  ng-repeat = "appt in day.appointments track by $index"> {{$index + 1}}. {{ appt }}</p>
+    <button class = 'btn-default' ng-click = "addAppointment($index)">Add Appointment</button>
     </div>
-
-
-
-
-
-  
-
 
 <script src="javascript.js"></script>
 </body>
