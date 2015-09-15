@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app = 'myApp'>
+<head>
+	<title>Infinite Agenda</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/journal/bootstrap.min.css">
+	<link href = 'stylesheet.css' type = 'text/css' rel = 'stylesheet'>
+
+</head>
+<body ng-controller = 'mainController'>
+
+	<div class="page-header text-center">
+		<h2>Calander</h2>
+	</div>
+	<div class="row times">
+
+    <div class="col-xs-4 text-center">
+              
+      <h2>Monday</h2>
+      
+      <div class="time-slot">       
+        <input type="checkbox" id="monday-time">
+        <label for="monday-time">9:00am</label>
+      </div>
+    </div>    
+
+  </div>
+
+  <p class="text-center">    
+    <a href="#" class="btn btn-primary">Reset</a>
+  </p>
+
+</div> 
+
+
+<script src="javascript.js"></script>
+</body>
+</html>
