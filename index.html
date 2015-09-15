@@ -8,29 +8,19 @@
 
 </head>
 <body ng-controller = 'mainController'>
+	<h2>Calander</h2>
+    
+    <div class = "calander" ng-repeat='day in days'>
+    <h3> {{ day }} </h3>
+    <p class = 'appts' ng-repeat = 'appt in day.appointments'> {{$index + 1}}. {{ appt }} </p>
+    <button class = 'primary-btn' ng-click = "addAppointment($index)">Add Apointment</button>
+    </div>
 
-	<div class="page-header text-center">
-		<h2>Calander</h2>
-	</div>
-	<div class="row times">
 
-    <div class="col-xs-4 text-center">
-              
-      <h2>Monday</h2>
-      
-      <div class="time-slot">       
-        <input type="checkbox" id="monday-time">
-        <label for="monday-time">9:00am</label>
-      </div>
-    </div>    
 
-  </div>
 
-  <p class="text-center">    
-    <a href="#" class="btn btn-primary">Reset</a>
-  </p>
 
-</div> 
+  
 
 
 <script src="javascript.js"></script>
