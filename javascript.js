@@ -38,8 +38,9 @@ var mainControllerFunc = function($scope, $event) {
 		day.appointments.splice(index, 1)
 	}
 
-	$scope.toEdit = function(index, day) {
-		
+	$scope.toEdit = function(index2, index, day) {
+		var edit = prompt("Edit your note");
+		$scope.days[index2].appointments[index] = edit
 
 		console.log('hi')
 

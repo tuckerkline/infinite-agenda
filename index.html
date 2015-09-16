@@ -1,22 +1,23 @@
+
 <!DOCTYPE html>
 <html ng-app = 'myApp'>
 <head>
-	<title>Infinite Agenda</title>
+    <title>Infinite Agenda</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.1/ng-infinite-scroll.min.js"></script> 
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/journal/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/journal/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link href = 'stylesheet.css' type = 'text/css' rel = 'stylesheet'>
+    <link href = 'stylesheet.css' type = 'text/css' rel = 'stylesheet'>
 
 </head>
 <body ng-controller = 'mainController'>
 <div infinite-scroll="getMoreDays(a, b)" infinite-scroll-distance=".25">
-	<h2>Calander</h2>
-    <div class = "calander" ng-repeat='day in days'>
+    <h2>Calander</h2>
+    <div class = "calander" ng-repeat='(index2, day) in days'>
     <h3> {{ day | date }} </h3>
     <ul>
-    <li class = 'appts' ng-repeat = "appt in day.appointments track by $index">{{$index + 1}}. {{ appt }} <div class = 'alignRight'><span><i class="fa fa-pencil smaller" ng-click = "toEdit($index, day)"></i></span><span><i class="fa fa-trash smaller" class = "delete" ng-click = "delete($index, day)"></i></div></li>
+    <li class = 'appts' ng-repeat = "appt in day.appointments track by $index">{{$index + 1}}. {{ appt }} <div class = 'alignRight'><span><i class="fa fa-pencil smaller" ng-click = "toEdit(index2, $index, day)"></i></span><span><i class="fa fa-trash smaller" class = "delete" ng-click = "delete($index, day)"></i></div></li>
     </ul>
     <button class = 'btn-default' ng-click = "addAppointment($index)">Add Appointment</button>
     </div>
