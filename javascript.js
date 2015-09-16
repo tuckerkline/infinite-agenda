@@ -1,6 +1,6 @@
 angular.module('myApp', ['infinite-scroll'])
 
-var mainControllerFunc = function($scope) {
+var mainControllerFunc = function($scope, $event) {
 	$scope.days = []
 
 	$scope.getDays = function() {
@@ -12,12 +12,10 @@ var mainControllerFunc = function($scope) {
 		}
 	}
 	$scope.getDays();
-	
+
 	$scope.a = 10
 	$scope.b = 15
-
 	$scope.getMoreDays = function(a, b) {
-		
 		for (var i = a ; i < b; i++){
 			var currentDate = new Date();
 	    	currentDate.setDate(currentDate.getDate()+ i);
@@ -28,19 +26,24 @@ var mainControllerFunc = function($scope) {
 		}
 	}
 
-
-
 	$scope.addAppointment = function(index) {
 		$scope.addedApt = prompt('Add your appointment name here')
+		if ($scope.addedApt == '') {
+			$scope.addedApt = "Empty Appt"
+		}
 		$scope.days[index].appointments.push($scope.addedApt)
 	}
+
 	$scope.delete = function(index, day) {
 		day.appointments.splice(index, 1)
 	}
-	$scope.toEdit = function(index) {
+
+	$scope.toEdit = function(index, day) {
 		
+
+		console.log('hi')
+
 	}
-	
 
 }
 

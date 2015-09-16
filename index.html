@@ -11,12 +11,12 @@
 
 </head>
 <body ng-controller = 'mainController'>
-<div infinite-scroll="getMoreDays(a, b)" infinite-scroll-distance="1">
+<div infinite-scroll="getMoreDays(a, b)" infinite-scroll-distance=".25">
 	<h2>Calander</h2>
     <div class = "calander" ng-repeat='day in days'>
     <h3> {{ day | date }} </h3>
     <ul>
-    <li class = 'appts' ng-repeat = "appt in day.appointments track by $index" ng-click = "toEdit($index)">{{$index + 1}}. {{ appt }} <div class = 'alignRight'><i class="fa fa-trash" class = "delete" ng-click = "delete($index, day)"></i></div></li>
+    <li class = 'appts' ng-repeat = "appt in day.appointments track by $index">{{$index + 1}}. {{ appt }} <div class = 'alignRight'><span><i class="fa fa-pencil smaller" ng-click = "toEdit($index, day)"></i></span><span><i class="fa fa-trash smaller" class = "delete" ng-click = "delete($index, day)"></i></div></li>
     </ul>
     <button class = 'btn-default' ng-click = "addAppointment($index)">Add Appointment</button>
     </div>
