@@ -11,9 +11,8 @@
 
 </head>
 <body ng-controller = 'mainController'>
-<div infinite-scroll="getDays()" infinite-scroll-distance="3">
+<div infinite-scroll="getMoreDays(a, b)" infinite-scroll-distance="1">
 	<h2>Calander</h2>
-    <div infinite-scroll = "getDays()" infinite-scroll-disabled = busy infinite-scroll-distance = "3">
     <div class = "calander" ng-repeat='day in days'>
     <h3> {{ day | date }} </h3>
     <ul>
@@ -21,9 +20,8 @@
     </ul>
     <button class = 'btn-default' ng-click = "addAppointment($index)">Add Appointment</button>
     </div>
-    </div>
 </div>
 
 <script src="javascript.js"></script>
 </body>
-</html>
+</html> 
